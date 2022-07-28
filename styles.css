@@ -1,0 +1,535 @@
+/**
+* Body Styling
+*
+* Anything pertaining to the styling of the body goes here. 
+*
+*/
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: black;
+}
+
+
+/**
+* Navbar Styling
+*
+* Anything pertaining to the styling of the navbar goes here. 
+*
+*/
+section.navbar {
+    overflow: hidden;
+    border-style: none !important;
+    height: auto;
+    background-color: black;
+}
+
+#logo {
+    margin: 0px;
+    margin-left: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 12px;
+    padding-bottom: 10.5px;
+    float: left;
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#logo:hover {
+    color: black;
+    background-color: white;
+    padding-left: 9px;
+    padding-right: 9px;
+    padding-top: 11px;
+    padding-bottom: 9.5px;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#logo:active {
+    /*color: white;
+    background-color: black;*/
+    color: black;
+    background-color: white;
+    -webkit-box-shadow: inset 0px 0px 10px #c1c1c1;
+    -moz-box-shadow: inset 0px 0px 10px #c1c1c1;
+    box-shadow: inset 0px 0px 10px #c1c1c1;
+}
+
+ul.navbar {
+    padding: 0px;
+    margin: 0px;
+}
+
+.navbar li{
+    display: inline;
+    height: auto;
+}
+
+nav {
+    text-align: right;
+    height: auto;
+}
+
+#navbutton {
+    float: right;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 15px;
+    padding-bottom: 12px;
+    color: white;
+    background-color: black;
+    text-decoration: none;
+}
+
+#navbutton:hover {
+    color: black;
+    background-color: white;
+    padding-left: 9px;
+    padding-right: 9px;
+    padding-top: 14px;
+    padding-bottom: 11px;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#navbutton:active {
+    /*color: white;
+    background-color: black;*/
+    color: black;
+    background-color: white;
+    -webkit-box-shadow: inset 0px 0px 10px #c1c1c1;
+    -moz-box-shadow: inset 0px 0px 10px #c1c1c1;
+    box-shadow: inset 0px 0px 10px #c1c1c1;
+}
+
+/**
+* Sitewide Styling
+*
+* Anything pertaining to the styling of the overall site goes here. 
+*
+*/
+h1, h2, h3 {
+    text-align: center;
+    margin-top: 0px;
+    padding-top: 20px;
+}
+
+h1, h2, h3, p {
+    font-family: Lato, sans-serif;
+}
+
+section {
+    border-top-style: none;
+    border-bottom-style: solid;
+    height: auto;
+}
+
+
+/**
+* Homepage Styling
+*
+* Anything pertaining to the styling of the home page goes here. 
+*
+*/
+section.home {
+    border-top-style: none;
+    border-bottom-style: none;
+    padding-bottom: 20px;
+    background-image: url("../resources/bwbook.jpg");
+}
+
+#bio {
+    text-align: center;
+}
+
+div.resume {
+    padding-top: 15px;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+#resumebutton {
+    display: inline;
+    text-decoration: none;
+    color: white;
+    background-color: black;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+#resumebutton:hover {
+    color: black;
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#resumebutton:active {
+    /*color: white;
+    background-color: black;*/
+    color: black;
+    background-color: white;
+    -webkit-box-shadow: inset 0px 0px 10px #c1c1c1;
+    -moz-box-shadow: inset 0px 0px 10px #c1c1c1;
+    box-shadow: inset 0px 0px 10px #c1c1c1;
+    /*border-style: none;*/
+}
+
+
+/**
+* Projects Styling
+*
+* Styling for the Projects section of the home page
+*
+*/
+section.projects {
+    background-image: url("../resources/motherboardBWextended.jpg");
+    background-size: 1800px;
+    padding-bottom: 20px;
+}
+
+ul#leftlist {
+    /*list-style: none;*/
+    margin-left: 50px;
+    margin-bottom: 100px;
+    /*width: 220px;*/
+    width: 210px;
+    margin-right: 0px !important;
+}
+
+#leftlist li{
+    text-align: left;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    /*width: 220px;*/
+    width: 210px;
+}
+
+div.projectpreview {
+    height: auto;
+    /*width: 218.5px;*/
+    width: 210px;
+    margin-right: 0px;
+    /*border-style: solid;
+    border-width: 1px;*/
+    text-align: left;
+}
+
+a.projectlink {
+    text-decoration: none;
+    color: black;
+}
+
+a.projectlink:hover {
+    /*color: rgb(201, 212, 221) !important;*/
+    color: rgb(194, 194, 194) !important;
+    background-color: white !important;
+    border-style: solid;
+    border-width: 1px;
+}
+
+a.projectlink:active {
+    color: black !important;
+}
+
+a.projectlink:visited {
+    /*color: lightslategray;*/
+    color: rgb(117, 117, 117);
+}
+
+.projectname {
+    margin-bottom: 0px;
+    text-align: left;
+    border-bottom: 1px dotted;
+}
+
+p.shortdescr {
+    margin-top: 0px;
+}
+
+
+/**
+* Project Pages Styling
+*
+* Styling for the pages discussing projects
+*
+*/
+#iportaldesc {
+    background-image: url("../resources/pcb2BW.jpg");
+    background-size: 1000px;
+}
+
+#reminderdesc {
+    background-image: url("../resources/calendar2BWextended2.JPEG");
+    background-size: 2000px;
+}
+
+#javacompdesc {
+    background-image: url("../resources/parsetrees2BW.jpg");
+    background-size: 1300px;
+}
+
+section.projectdesc {
+    /*background-image: url("pcb2BW.jpg");*/
+    text-align: center;
+}
+
+div.projectdesc {
+    display: inline-block;
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    margin-left: 300px;
+    margin-right: 300px;
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+#projecttext {
+    margin-left: 50px;
+    margin-right: 50px;
+    text-align: justify;
+}
+
+
+/**
+* Contact Styling
+*
+* Styling for the contact page
+*
+*/
+section.contact {
+    background-image: url("../resources/notebookBWextended2.PNG");
+    background-size: 1300px;
+}
+
+div.contact {
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+#contactform {
+    background-color: white;
+    display: inline-block;
+    border-style: solid;
+    border-width: 1px;
+    padding-top: 20px;
+    padding-bottom: 25px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+#fname, #lname, #email, #phone, #message {
+    border-radius: 0px;
+    font: 16px Times New Roman, serif;
+    border-top-style: none;
+    border-left-style: none;
+    border-right-style: none;
+    border-bottom-style: solid;
+    border-color: black;
+}
+
+#fname:focus, #lname:focus, #email:focus, #phone:focus, #message:focus {
+    outline: none;
+}
+
+#message {
+    border-width: 2px;
+    /*resize: none;*/
+}
+
+#formsubmit {
+    display: inline;
+    margin-top: 5px;
+    font: 16px Times New Roman, serif;
+    float: right;
+    color: white;
+    background-color: black;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+#formsubmit:hover {
+    color: black;
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    padding-left: 11px;
+    padding-right: 11px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+
+#formsubmit:active {
+    /*color: white;
+    background-color: black;*/
+    color: black;
+    background-color: white;
+    -webkit-box-shadow: inset 0px 0px 10px #c1c1c1;
+    -moz-box-shadow: inset 0px 0px 10px #c1c1c1;
+    box-shadow: inset 0px 0px 10px #c1c1c1;
+}
+
+
+/** 
+* Custom Alert Styling
+*
+* Styling the custom alert created for form submission errors.
+*
+*
+*/
+#grayscreen {
+    background-color: black;
+    opacity: 0.5;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9;
+    position: sticky;
+}
+
+#alertwindow {
+    position: center;
+    background-color: white;
+    height: auto;
+    width: auto;
+}
+
+#alerthead {
+    background-color: red;
+    height: auto;
+    width: auto;
+}
+
+#alertbody {
+    background-color: white;
+    height: auto;
+    width: auto;
+}
+
+#alerttitle {
+    color: white;
+}
+
+#alertmessage {
+    color: red;
+}
+
+#closebutton {
+    border-radius: 0px;
+    display: inline;
+    margin-top: 5px;
+    font: 16px Times New Roman, serif;
+    float: right;
+    color: white;
+    background-color: red;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+#closebutton:hover {
+    color: red;
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+}
+
+#closebutton:active{
+    color: white;
+    background-color: red;
+}
+
+/*Footer Styling
+*
+* Anything pertaining to the styling of the footer goes here. 
+*
+*/
+section.footer {
+    margin: 0px;
+    padding: 10px;
+    height: auto;
+    border-style: none !important;
+    color: white;
+    background-color: black;
+}
+
+p.footer {
+    margin: 0px;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif !important;
+}
+
+
+/**
+* Custom Scrollbar
+*
+* Styling for a custom scrollbar
+*
+*
+*/
+/* width */
+::-webkit-scrollbar {
+    width: 13px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    width: 13px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+
+/**
+* Unused Code
+*
+* Code that may need to be revisited
+*
+*/
+
+/*ul.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+}
+
+.navbar li {
+    display: inline;
+}*/
+
+/*#button.resume {
+    border-style: solid;
+    width: 100px;
+    height: 50px;
+}*/
+
+/*#button p {
+    text-align: center;
+}*/

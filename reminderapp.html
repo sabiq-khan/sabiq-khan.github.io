@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Reminder App</title>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <div id="nav-placeholder">
+        </div>
+        <script>
+            $(function(){
+                $("#nav-placeholder").load("nav.html");
+            });
+        </script>
+
+        <section class="projectdesc" id="reminderdesc">
+            <div class="projectdesc">
+                <h1 id="projectheading">Reminder App</h1>
+                <p id="projecttext">
+                    <b>The Challenge: </b> I had to build a desktop application in Java that allowed users
+                    to schedule tasks they wanted to complete at a certain time. The app had to allow 
+                    users to enter details about these tasks such as a deadline, a description, and when 
+                    they wanted to recieve a notification reminding them about their task.</br></br>
+                    
+                    <b>Tools Used: </b></br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Front-end: JavaFX</br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Back-end: Java</br></br>
+
+                    <b>Development and Role: </b> I took an MVC approach to building this application, with a 
+                    different Java class for handling each. My Model class created an ObservableList of Task 
+                    objects, each of which stored information about a task such as deadline, description, 
+                    priority, and reminder time. My View class used JavaFX to create a interactive GUI that
+                    presented users with text fields where they could enter information and sent them
+                    notifications about their tasks whenever appropriate. My Controller class allowed the Model
+                    and View to communicate; information entered into the GUI would result in updates to the 
+                    Model and back-end logic in the Model could result in changes to the GUI. 
+                </p>
+            </div>
+        </section>
+    </body>
+
+    <footer>
+        <div id="footer-placeholder">
+        </div>
+        <script>
+            $(function(){
+                $("#footer-placeholder").load("footer.html");
+            });
+        </script>
+    </footer>

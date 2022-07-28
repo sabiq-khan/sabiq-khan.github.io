@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Intranet Portal</title>
+        <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <div id="nav-placeholder">
+        </div>
+        <script>
+            $(function(){
+                $("#nav-placeholder").load("nav.html");
+            });
+        </script>
+
+        <section class="projectdesc" id="iportaldesc">
+            <div class="projectdesc">
+                <h1 id="projectheading">Intranet Portal</h1>
+                <p id="projecttext">
+                    <b>The Challenge: </b> While I was an employee at an IT solutions company, we had a 
+                    client who wanted us to build an intranet portal web application for them. The client
+                    was a major hardware manufacturer who wanted to use this application to track 
+                    employee assignments, projects, and manufacturing workflows.</br></br>
+                    
+                    <b>Tools Used: </b></br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Front-end: HTML, SCSS, Bootstrap, TypeScript, Angular</br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    Back-end: C#, ASP.NET, MySQL</br></br>
+
+                    <b>Development and Role: </b> I worked on both the front and back end of this
+                    application. On the front-end, I used HTML, SCSS, and Angular to build interactive
+                    web pages. I created forms into which users could enter input and be shown the status
+                    of ongoing projects and manufacturing processes. On the back-end, I handled POST and 
+                    GET requests using C# in ASP.NET and wrote queries to the database using LINQ. 
+                    Additionally, I helped style the UI, layout, and overall appearance of the front-end 
+                    using SCSS and Bootstrap and created icons and logos myself wherever necessary. 
+                </p>
+            </div>
+        </section>
+    </body>
+
+    <footer>
+        <div id="footer-placeholder">
+        </div>
+        <script>
+            $(function(){
+                $("#footer-placeholder").load("footer.html");
+            });
+        </script>
+    </footer>
+</html>
