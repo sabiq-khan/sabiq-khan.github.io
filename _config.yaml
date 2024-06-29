@@ -1,0 +1,5 @@
+exclude:
+- .gitignore
+- .dockerignore
+- Dockerfile
+- test.sh
