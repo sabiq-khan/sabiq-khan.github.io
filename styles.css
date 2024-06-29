@@ -1,0 +1,8 @@
+.maincontent {
+    display: grid;
+    place-content: center;
+}
+
+.navitem {
+    display: inline-block;
+}
