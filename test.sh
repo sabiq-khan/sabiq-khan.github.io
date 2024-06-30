@@ -28,7 +28,7 @@ log(){
 }
 
 catch(){
-    log -e $1
+    log -e $@
     exit 1
 }
 

@@ -2,31 +2,32 @@ const MAX_DIVISIONS = 3;
 const MAX_TEAMS_PER_DIVISION = 4;
 const MAX_SEASONAL_GAMES = 14;
 
-let divisionCountOptions = [];
-for (let i = 0; i < MAX_DIVISIONS; i++){
-    divisionCountOptions.push(`<option value='${i + 1}'>${i + 1}</option>`);
+// Creates positive integer options for a select w/in a given range (inclusive)
+function createOptionsInRange(selectId, lowerLimit, upperLimit){
+    let options = [];
+    for (let i = lowerLimit; i < (upperLimit + 1); i++){
+        options.push(`<option value='${i}'>${i}</option>`);
+    }
+    document.getElementById(selectId).innerHTML = options.join("");
 }
-document.getElementById("division-count").innerHTML = divisionCountOptions.join("");
 
-let teamCountOptions = [];
-for (let i = 0; i < MAX_TEAMS_PER_DIVISION; i++){
-    teamCountOptions.push(`<option value='${i + 1}'>${i + 1}</option>`)
+createOptionsInRange("division-count", 2, MAX_DIVISIONS);
+createOptionsInRange("team-count", 1, MAX_TEAMS_PER_DIVISION);
+createOptionsInRange("nondiv-week-count", 1, MAX_SEASONAL_GAMES);
+createOptionsInRange("div-week-count", 1, MAX_SEASONAL_GAMES);
+
+function validateInitialInputForm(){
+    let nonDivisionalWeekCount = document.forms["initial-input-form"]["nondiv-week-count"].value;
+    let divisionalWeekCount = document.forms["initial-input-form"]["div-week-count"].value;
+
+    if ((nonDivisionalWeekCount + divisionalWeekCount) != 14){
+        message = "Number of divisional and non-divisional weeks does not add up to 14.";
+        alert(`Error: ${message}`);
+        throw new Error(message);
+    }
 }
-document.getElementById("team-count").innerHTML = teamCountOptions.join("");
-
-let nonDivisionalWeekCountOptions = [];
-for (let i = 0; i < MAX_SEASONAL_GAMES; i++){
-    nonDivisionalWeekCountOptions.push(`<option value='${i + 1}'>${i + 1}</option>`);
-}
-document.getElementById("nondiv-week-count").innerHTML = nonDivisionalWeekCountOptions.join("");
-
-let divisionalWeekCountOptions = [];
-for (let i = 0; i < MAX_SEASONAL_GAMES; i++){
-    divisionalWeekCountOptions.push(`<option value='${i + 1}'>${i + 1}</option>`);
-}
-document.getElementById("div-week-count").innerHTML = divisionalWeekCountOptions.join("");
-
 function getSecondaryInputForm(){
+    validateInitialInputForm()
     let divisionCount = document.forms["initial-input-form"]["division-count"].value;
     let teamCount = document.forms["initial-input-form"]["team-count"].value;
 
