@@ -16,68 +16,69 @@ createOptionsInRange("team-count", 1, MAX_TEAMS_PER_DIVISION);
 createOptionsInRange("nondiv-week-count", 1, MAX_SEASONAL_GAMES);
 createOptionsInRange("div-week-count", 1, MAX_SEASONAL_GAMES);
 
-let divisionCount = Number(document.forms["initial-input-form"]["division-count"].value);
-let teamCount = Number(document.forms["initial-input-form"]["team-count"].value);
-let nonDivisionalWeekCount = Number(document.forms["initial-input-form"]["nondiv-week-count"].value);
-let divisionalWeekCount = Number(document.forms["initial-input-form"]["div-week-count"].value);
+let divisionCount;
+let teamCount;
+let nonDivisionalWeekCount;
+let divisionalWeekCount;
 
-function validateInitialInputForm(){
-    nonDivisionalWeekCount = Number(document.forms["initial-input-form"]["nondiv-week-count"].value);
-    divisionalWeekCount = Number(document.forms["initial-input-form"]["div-week-count"].value);
+function validateFirstForm(){
+    divisionCount = Number(document.forms["first-form"]["division-count"].value);
+    teamCount = Number(document.forms["first-form"]["team-count"].value);
+    nonDivisionalWeekCount = Number(document.forms["first-form"]["nondiv-week-count"].value);
+    divisionalWeekCount = Number(document.forms["first-form"]["div-week-count"].value);
+
+    console.log(`Division count: ${divisionCount}`);
+    console.log(`Team count: ${teamCount}`);
+    console.log(`Non-divisional week count: ${nonDivisionalWeekCount}`);
+    console.log(`Divisional week count: ${divisionalWeekCount}`);
 
     if ((nonDivisionalWeekCount + divisionalWeekCount) != 14){
-        message = "Number of divisional and non-divisional weeks does not add up to 14.";
-        throw new Error(message);
+        throw new Error("Number of divisional and non-divisional weeks does not add up to 14.");
     }
 }
 
-function createSecondaryInputForm(){
-    divisionCount = Number(document.forms["initial-input-form"]["division-count"].value);
-    teamCount = Number(document.forms["initial-input-form"]["team-count"].value);
-
-    let secondaryInputForm = [`<form name="secondary-input-form">`];
+function createSecondForm(){
+    let secondForm = [`<form name="second-form">`];
     for (let i = 0; i < divisionCount; i++){
-        secondaryInputForm.push(`<label>Division ${i + 1}</label><br>`);
+        secondForm.push(`<label>Division ${i + 1}</label><br>`);
         for (let j = 0; j < teamCount; j++){
             teamNumber = (i * teamCount) + (j + 1);
             inputName = `team-${teamNumber}-name`;
-            secondaryInputForm.push(`<label>Team ${teamNumber} Name</label><br>`);
-            secondaryInputForm.push(`<input name="${inputName}" id="${inputName}" type="text"><br><br>`);
+            secondForm.push(`<label>Team ${teamNumber} Name</label><br>`);
+            secondForm.push(`<input name="${inputName}" id="${inputName}" type="text"><br><br>`);
         }
     }
 
-    nonDivisionalWeekCount = Number(document.forms["initial-input-form"]["nondiv-week-count"].value);
-    secondaryInputForm.push("<label>Non-Divisional Weeks</label><br></br>");
+    secondForm.push("<label>Non-Divisional Weeks</label><br></br>");
     for (let i = 0; i < nonDivisionalWeekCount; i++){
         selectName = `nondiv-week-select-${i}`;
-        secondaryInputForm.push(`<select name=${selectName} id="${selectName}">`);
+        secondForm.push(`<select name=${selectName} id="${selectName}">`);
         for (let j = 0; j < MAX_SEASONAL_GAMES; j++){
-            secondaryInputForm.push(`<option value='${j + 1}'>${j + 1}</option>`);
+            secondForm.push(`<option value='${j + 1}'>${j + 1}</option>`);
         }
-        secondaryInputForm.push("</select><br><br>");
+        secondForm.push("</select><br><br>");
     }
 
-    divisionalWeekCount = Number(document.forms["initial-input-form"]["div-week-count"].value);
-    secondaryInputForm.push("<label>Divisional Weeks</label><br></br>");
+    secondForm.push("<label>Divisional Weeks</label><br></br>");
     for (let i = 0; i < divisionalWeekCount; i++){
         selectName = `div-week-select-${i}`;
-        secondaryInputForm.push(`<select name=${selectName} id="${selectName}">`);
+        secondForm.push(`<select name=${selectName} id="${selectName}">`);
         for (let j = 0; j < MAX_SEASONAL_GAMES; j++){
-            secondaryInputForm.push(`<option value='${j + 1}'>${j + 1}</option>`);
+            secondForm.push(`<option value='${j + 1}'>${j + 1}</option>`);
         }
-        secondaryInputForm.push("</select><br><br>");
+        secondForm.push("</select><br><br>");
     }
 
-    secondaryInputForm.push(`<button onclick="fetch('/pages/fantasy-football-matchups/fantasy-football-matchups.html')">Clear</button><br>`);
-    secondaryInputForm.push(`<button name="secondary-input-form-submit" id="secondary-input-form-submit">Submit</button>`);
-    secondaryInputForm.push("</form>");
-    document.getElementById("form").innerHTML = secondaryInputForm.join("");
+    secondForm.push(`<button onclick="fetch('/pages/fantasy-football-matchups/fantasy-football-matchups.html')">Clear</button><br>`);
+    secondForm.push(`<button name="second-form-submit" id="second-form-submit">Submit</button>`);
+    secondForm.push("</form>");
+    document.getElementById("form").innerHTML = secondForm.join("");
 
-    document.getElementById("secondary-input-form-submit").addEventListener("click", function(event){
+    document.getElementById("second-form-submit").addEventListener("click", function(event){
         event.preventDefault();
     
         try {
-            validateSecondaryInputForm();
+            validateSecondForm();
             createSeasonalMatchups();
         } catch (error) {
             console.error(error);
@@ -87,14 +88,14 @@ function createSecondaryInputForm(){
 }
 
 document.addEventListener("DOMContentLoaded", function(){
-    let initialInputFormSubmit = document.getElementById("initial-input-form-submit");
-    if (initialInputFormSubmit) {
-        initialInputFormSubmit.addEventListener("click", function(event){
+    let firstFormSubmit = document.getElementById("first-form-submit");
+    if (firstFormSubmit) {
+        firstFormSubmit.addEventListener("click", function(event){
             event.preventDefault();
         
             try {
-                validateInitialInputForm();
-                createSecondaryInputForm();
+                validateFirstForm();
+                createSecondForm();
             } catch (error) {
                 console.error(error);
                 alert(error);
@@ -123,14 +124,14 @@ function arraysExclusive(array1, array2){
     return allUnique(union);
 }
 
-function validateSecondaryInputForm(){
-    console.log("Hit validation function for secondary input form.");
-    console.log(`Division count: ${divisionCount}`);
-    console.log(`Team count: ${teamCount}`);
-    console.log(`Non-divisional week count: ${nonDivisionalWeekCount}`);
-    console.log(`Divisional week count: ${divisionalWeekCount}`);
+function resetAndThrow(errorMessage){
+    league = [];
+    nonDivisionalWeeks = [];
+    divisionalWeeks = [];
+    throw new Error(errorMessage);
+}
 
-
+function validateSecondForm(){
     for (let i = 0; i < nonDivisionalWeekCount; i++){
         week = Number(document.getElementById(`nondiv-week-select-${i}`).value);
         nonDivisionalWeeks.push(week);
@@ -157,15 +158,12 @@ function validateSecondaryInputForm(){
     console.log(`Divisional weeks: ${divisionalWeeks}`);
 
     if (!(allUnique(nonDivisionalWeeks))){
-        message = "All non-divisional weeks must be unique.";
-        throw new Error(message);
+        resetAndThrow("All non-divisional weeks must be unique.");
     }
     if (!(allUnique(divisionalWeeks))){
-        message = "All divisional weeks must be unique.";
-        throw new Error(message);
+        resetAndThrow("All divisional weeks must be unique.");
     }
     if (!(arraysExclusive(nonDivisionalWeeks, divisionalWeeks))){
-        message = "Divisional and non-divisional weeks must all be different.";
-        throw new Error(message);
+        resetAndThrow("Divisional and non-divisional weeks must all be different.");
     }
 }
