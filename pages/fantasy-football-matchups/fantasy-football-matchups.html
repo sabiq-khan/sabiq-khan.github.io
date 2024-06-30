@@ -3,7 +3,8 @@
     <head>
         <title>Fantasy Football Matchups</title>
         <link rel="stylesheet" href="/styles.css">
-        <script src="/script.js"></script>
+        <script src="/script.js" defer></script>
+        <script src="./fantasy-football-matchups.js" defer></script>
     </head>
     <body>
         <div class="maincontent">
@@ -12,6 +13,27 @@
 
             <div>
                 <h1>Fantasy Football Matchups</h1>
+                <div class="form" id="form">
+                    <form name="initial-input-form" onsubmit="getSecondaryInputForm()">
+                        <label>How many divisions?</label><br>
+                        <select name="division-count" id="division-count">
+                        </select><br><br>
+    
+                        <label>How many teams per division?</label><br>
+                        <select name="team-count" id="team-count">
+                        </select><br><br>
+    
+                        <label>How many non-divisional weeks?</label><br>
+                        <select name="nondiv-week-count" id="nondiv-week-count">
+                        </select><br><br>
+
+                        <label>How many divisional weeks?</label><br>
+                        <select name="div-week-count" id="div-week-count">
+                        </select><br><br>
+
+                        <input name="submit-params" id="submit-params" type="submit">
+                    </form>
+                </div>
             </div>
 
             <div id="footer">

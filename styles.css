@@ -1,6 +1,7 @@
 .maincontent {
     display: grid;
     place-content: center;
+    text-align: center;
 }
 
 .navitem {
