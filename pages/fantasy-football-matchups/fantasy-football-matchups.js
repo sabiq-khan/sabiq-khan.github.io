@@ -17,8 +17,8 @@ createOptionsInRange("nondiv-week-count", 1, MAX_SEASONAL_GAMES);
 createOptionsInRange("div-week-count", 1, MAX_SEASONAL_GAMES);
 
 function validateInitialInputForm(){
-    let nonDivisionalWeekCount = document.forms["initial-input-form"]["nondiv-week-count"].value;
-    let divisionalWeekCount = document.forms["initial-input-form"]["div-week-count"].value;
+    let nonDivisionalWeekCount = Number(document.forms["initial-input-form"]["nondiv-week-count"].value);
+    let divisionalWeekCount = Number(document.forms["initial-input-form"]["div-week-count"].value);
 
     if ((nonDivisionalWeekCount + divisionalWeekCount) != 14){
         message = "Number of divisional and non-divisional weeks does not add up to 14.";
@@ -26,12 +26,14 @@ function validateInitialInputForm(){
         throw new Error(message);
     }
 }
-function getSecondaryInputForm(){
-    validateInitialInputForm()
-    let divisionCount = document.forms["initial-input-form"]["division-count"].value;
-    let teamCount = document.forms["initial-input-form"]["team-count"].value;
 
-    let secondaryInputForm = [`<form name="secondary-input-form">`];
+function createSecondaryInputForm(){
+    validateInitialInputForm();
+
+    let divisionCount = Number(document.forms["initial-input-form"]["division-count"].value);
+    let teamCount = Number(document.forms["initial-input-form"]["team-count"].value);
+
+    let secondaryInputForm = [`<form name="secondary-input-form" onsubmit="createSeasonalMatchups()">`];
     for (let i = 0; i < divisionCount; i++){
         secondaryInputForm.push(`<label>Division ${i + 1}</label><br>`);
         for (let j = 0; j < teamCount; j++){
@@ -40,7 +42,7 @@ function getSecondaryInputForm(){
         }
     }
 
-    let nonDivisionalWeekCount = document.forms["initial-input-form"]["nondiv-week-count"].value;
+    let nonDivisionalWeekCount = Number(document.forms["initial-input-form"]["nondiv-week-count"].value);
     secondaryInputForm.push("<label>Non-Divisional Weeks</label><br></br>");
     for (let i = 0; i < nonDivisionalWeekCount; i++){
         secondaryInputForm.push(`<select>`);
@@ -50,7 +52,7 @@ function getSecondaryInputForm(){
         secondaryInputForm.push("</select><br><br>");
     }
 
-    let divisionalWeekCount = document.forms["initial-input-form"]["div-week-count"].value;
+    let divisionalWeekCount = Number(document.forms["initial-input-form"]["div-week-count"].value);
     secondaryInputForm.push("<label>Divisional Weeks</label><br></br>");
     for (let i = 0; i < divisionalWeekCount; i++){
         secondaryInputForm.push(`<select>`);
@@ -61,6 +63,15 @@ function getSecondaryInputForm(){
     }
 
     secondaryInputForm.push(`<button onclick="fetch('/pages/fantasy-football-matchups/fantasy-football-matchups.html')">Clear</button>`);
+    secondaryInputForm.push(`<input name="submit-secondary-input-form" id="submit-secondary-input-form" type="submit">`);
     secondaryInputForm.push("</form>");
     document.getElementById("form").innerHTML = secondaryInputForm.join("");
+}
+
+function validateSecondaryInputForm(){
+    console.log("Hit validation function for secondary input form.");
+}
+
+function createSeasonalMatchups(){
+    validateSecondaryInputForm();
 }
