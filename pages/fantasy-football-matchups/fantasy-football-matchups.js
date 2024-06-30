@@ -87,20 +87,15 @@ function createSecondForm(){
     });
 }
 
-document.addEventListener("DOMContentLoaded", function(){
-    let firstFormSubmit = document.getElementById("first-form-submit");
-    if (firstFormSubmit) {
-        firstFormSubmit.addEventListener("click", function(event){
-            event.preventDefault();
-        
-            try {
-                validateFirstForm();
-                createSecondForm();
-            } catch (error) {
-                console.error(error);
-                alert(error);
-            }
-        });
+document.getElementById("first-form-submit").addEventListener("click", function(event){
+    event.preventDefault();
+
+    try {
+        validateFirstForm();
+        createSecondForm();
+    } catch (error) {
+        console.error(error);
+        alert(error);
     }
 });
 
