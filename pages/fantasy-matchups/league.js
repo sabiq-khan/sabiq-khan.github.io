@@ -7,7 +7,7 @@ class Division {
 }
 
 export class League {
-    static createForm(divs, teams, nonDivWeeks, divWeeks) {
+    static createForm(divs, teams) {
         let form = [`<form name="league">`];
         for (let i = 0; i < divs; i++){
             form.push(`<label>Division ${i + 1}</label><br>`);
@@ -17,26 +17,6 @@ export class League {
                 form.push(`<label>Team ${teamNumber} Name</label><br>`);
                 form.push(`<input name="${team}" id="${team}" type="text"><br><br>`);
             }
-        }
-
-        form.push("<label>Non-Divisional Weeks</label><br></br>");
-        for (let i = 0; i < nonDivWeeks; i++){
-            const week = `nondiv-week-${i}`;
-            form.push(`<select name=${week} id="${week}">`);
-            for (let j = 0; j < MAX_SEASONAL_GAMES; j++){
-                form.push(`<option value='${j + 1}'>${j + 1}</option>`);
-            }
-            form.push("</select><br><br>");
-        }
-
-        form.push("<label>Divisional Weeks</label><br></br>");
-        for (let i = 0; i < divWeeks; i++){
-            const week = `div-week-${i}`;
-            form.push(`<select name=${week} id="${week}">`);
-            for (let j = 0; j < MAX_SEASONAL_GAMES; j++){
-                form.push(`<option value='${j + 1}'>${j + 1}</option>`);
-            }
-            form.push("</select><br><br>");
         }
 
         form.push(`<button onclick="fetch('/pages/fantasy-matchups/fantasy-matchups.html')">Clear</button><br>`);
