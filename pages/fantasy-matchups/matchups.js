@@ -3,9 +3,9 @@ import { recursiveDeepCopy } from './utils.js'
 
 export class MatchupCreator {
     constructor(league, schedule) {
-        this.league = league
-        this.schedule = schedule
-        this.matchups = []
+        this.league = league;
+        this.schedule = schedule;
+        this.matchups = [];
     }
 
     divMatchupExistsTwice(currentWeek, team1, team2){

@@ -42,7 +42,7 @@ export class Season {
                 const nonDivWeeks = Number(document.forms["season"]["nondiv-weeks"].value);
                 const divWeeks = Number(document.forms["season"]["div-weeks"].value);
 
-                return new Season(divs, teams, nonDivWeeks, divWeeks)
+                return new Season(divs, teams, nonDivWeeks, divWeeks);
             } catch (error) {
                 throw error;
             }

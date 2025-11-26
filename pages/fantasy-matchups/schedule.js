@@ -35,16 +35,15 @@ export class Schedule {
         document.getElementById("schedule-submit").addEventListener("click", function(event) {
             event.preventDefault();
             try {
-                const nonDivWeeks = []
-                const divWeeks = []
+                const nonDivWeeks = [];
+                const divWeeks = [];
                 for (let i = 0; i < nonDivWeekCount; i++){
                     week = Number(document.getElementById(`nondiv-week-${i}`).value);
                     nonDivWeeks.push(week);
                 }
                 for (let i = 0; i < divWeekCount; i++){
                     week = Number(document.getElementById(`div-week-${i}`).value);
-                    divWeeks.pu
-                    sh(week);
+                    divWeeks.push(week);
                 }
                 return new Schedule(divWeeks, nonDivWeeks);
             } catch(error) {

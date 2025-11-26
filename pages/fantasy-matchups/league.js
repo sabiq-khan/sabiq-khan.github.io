@@ -30,7 +30,7 @@ export class League {
         document.getElementById("league-submit").addEventListener("click", function(event) {
             event.preventDefault;
             try {
-                const divs = []
+                const divs = [];
                 for (let i = 0; i < divCount; i++){
                     const teams = [];
                     for (let j = 0; j < teamCount; j++){
@@ -39,7 +39,7 @@ export class League {
                         teams.push(team);
                     }
                     const div = new Division(teams);
-                    divs.push(div)
+                    divs.push(div);
                 }
             } catch(error) {
                 throw error;
