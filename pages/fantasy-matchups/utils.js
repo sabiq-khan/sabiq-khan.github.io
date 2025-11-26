@@ -42,3 +42,10 @@ export function recursiveDeepCopy(nestedArray){
     }
     return newNestedArray;
 }
+
+// Generates a random int between 2 numbers, excluding upper limit
+export function getRandomInRange(lowerLimit, upperLimit){
+    const range = Math.floor(upperLimit - lowerLimit);
+    let randomInt = lowerLimit + Math.floor((Math.random() * range));
+    return randomInt;
+}
