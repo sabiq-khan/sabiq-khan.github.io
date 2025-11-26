@@ -1,5 +1,3 @@
-import './constants.js'
-
 class Division {
     constructor(teams) {
         this.teams = teams

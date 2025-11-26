@@ -1,10 +1,11 @@
-import { Season } from './season.js'
-import { League } from './league.js'
-import { Schedule } from './schedule.js'
-import { MatchupCreator } from './matchups'
+import { Season } from './season.mjs'
+import { League } from './league.mjs'
+import { Schedule } from './schedule.mjs'
+import { MatchupCreator } from './matchups.mjs'
 
 function main() {
     try {
+        // TODO: Fix race condition for Season instantiation
         const season = Season.fromForm();
         const league = League.fromForm(season.divs, season.teams);
         const schedule = Schedule.fromForm(season.nonDivWeeks, season.divWeeks);
@@ -19,4 +20,4 @@ function main() {
 }
 
 // ENTRYPOINT
-main
+main()

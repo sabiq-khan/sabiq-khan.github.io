@@ -1,5 +1,5 @@
-import './constants.js'
-import { recursiveDeepCopy } from './utils.js'
+import { MAX_SEASONAL_GAMES } from './constants.js'
+import { recursiveDeepCopy } from './utils.mjs'
 
 export class MatchupCreator {
     constructor(league, schedule) {

@@ -1,5 +1,5 @@
-import './constants.js'
-import { createOptionsInRange } from './utils.js'
+import { MAX_DIVISIONS, MAX_TEAMS_PER_DIVISION, MAX_SEASONAL_GAMES } from './constants.js'
+import { createOptionsInRange } from './utils.mjs'
 
 const FORM = `
 <form name="season">
@@ -32,7 +32,7 @@ export class Season {
         createOptionsInRange("div-weeks", 1, MAX_SEASONAL_GAMES);
     }
 
-    static fromForm(){
+    static fromForm () {
         Season.createForm()
         document.getElementById("season-submit").addEventListener("click", function(event) {
             event.preventDefault();

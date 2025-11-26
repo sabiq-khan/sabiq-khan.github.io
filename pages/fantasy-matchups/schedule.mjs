@@ -1,5 +1,5 @@
-import './constants.js'
-import { allUnique, arraysExclusive } from './utils.js'
+import { MAX_SEASONAL_GAMES } from './constants.js'
+import { allUnique, arraysExclusive } from './utils.mjs'
 
 export class Schedule {
     static createForm(nonDivWeekCount, divWeekCount) {
